@@ -1,0 +1,177 @@
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="content-header">
+                    <h1>
+                        Thai Minh Tin - Socket Server
+                        <small>Ver 2.0</small>
+                    </h1>
+                </section>
+            </div>
+        </div>
+
+        <hr class="style-four">
+        <div class="row"><center>
+            <section class="content-header">
+                    <h1>
+                        CẢM BIẾN DHT11
+                    </h1>
+                    <br>
+            </section>
+            <div class="col-lg-12 col-md-12">
+                <div class="row"> 
+                    <div class="col-md-6 col-md-6 col-sm-6">
+                        <ng-gauge id="g1" size="250" type="arch" thick="20" 
+                                  min="-20" max="55" value="nhietdo"
+                                  cap="round" label="Nhiệt độ" append="°C"
+                                  foreground-color="#2980b9" background-color="#ecf0f1">
+                        </ng-gauge>
+                    </div>
+                    <div class="col-md-6 col-md-6 col-sm-6">
+                        <ng-gauge id="g2" size="250" type="arch" thick="20" 
+                                  min="0" max="100" value=doam
+                                  cap="round" label="Độ ẩm" append="%"
+                                  foreground-color="#e74c3c" background-color="#ecf0f1" >
+                        </ng-gauge>
+                    </div>
+                </div>  
+                <a style="display: inline;" id="update_DHT" class="btn btn-success btn-sm " ng-click="updateDHT11()">Cập nhật cảm biến</a> 
+            </div>
+
+        </div>
+        <hr class="style-four">
+        <div class="row"><center>
+            <section class="content-header">
+                    <h1>
+                        CẢM BIẾN MƯA
+                    </h1>
+                    <br>
+            </section>
+            <div class="col-lg-12 col-md-12">
+                <div class="row"> 
+                    <div class="col-md-12 col-md-12 col-sm-12">
+                        <img id="sunicon" src="base/img/sun.png" alt="" style="width: 10%">
+                    </div>
+                    <div class="col-md-12 col-md-12 col-sm-12">
+                        <img id="rainicon" src="base/img/rain.png" alt="" style="width: 10%">
+                    </div>
+                </div>  
+                <br> 
+                <a style="display: inline;" id="update_rain" class="btn btn-success btn-sm " ng-click="updateRain()">Cập nhật cảm biến</a>
+            </div>
+        </div>
+        <hr class="style-four">
+        <div class="row"><center>
+            <section class="content-header">
+                    <h1>
+                        BẬT TẮT THIẾT BỊ ĐIỆN
+                    </h1>
+                    <br>
+            </section>
+            <div class="container-fluid">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-3" style="text-align: center;">
+                             <img src="base/img/on.png" alt="Cinque Terre" style="height: 144px;padding: 15px;margin-top: -35px;">
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <table class="table table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td class="vert-align">Quạt</td>
+                                        <td style="text-align: right;">
+                                            <toggle ng-change="changeRelay()" ng-model="relay_status[0]"></toggle>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="vert-align">Led vàng</td>
+                                        <td style="text-align: right;">
+                                            <toggle ng-change="changeRelay()" ng-model="relay_status[1]"></toggle>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="vert-align">Led xanh</td>
+                                        <td style="text-align: right;">
+                                            <toggle ng-change="changeRelay()" ng-model="relay_status[2]"></toggle>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="vert-align">Led đỏ</td>
+                                        <td style="text-align: right;">
+                                            <toggle ng-change="changeRelay()" ng-model="relay_status[3]"></toggle>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-3">
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="style-four">
+        <div class="row"> <center>
+            <div class="col-lg-12">
+                <section class="content-header">
+                    <h1>
+                        MÀN HÌNH LCD
+                        <small>Ver 1602</small>
+                    </h1>
+                    <br>
+                </section>
+            </div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="input-group"> 
+                    <span class="input-group-addon">Dòng 1</span>
+                    <input id="filter" type="text" class="form-control" placeholder="Type here..." ng-model="lcd[0]">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">Dòng 2</span>
+                    <input id="filter" type="text" class="form-control" placeholder="Type here..." ng-model="lcd[1]">
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-12">
+                <br>
+                <a style="display: inline;" id="update_LCD" class="btn btn-success btn-sm " ng-click="updateLCD()">Cập nhật LCD</a>
+            </div>
+        </div>
+
+        <hr class="style-four">
+
+        <div class="row"> <center>
+            <div class="col-lg-12">
+                <section class="content-header">
+                    <h1>
+                        ĐỘNG CƠ SERVO
+                        <small>Ver G90</small>
+                    </h1>
+                    <br>
+                </section>
+            </div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="input-group"> 
+                    <span class="input-group-addon">Góc Servo:</span>
+                    <input id="filter" type="text" class="form-control" placeholder="Type here..." ng-model="servoPosition">
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-12">
+                <br>
+                <a style="display: inline;" id="update_Servo" class="btn btn-success btn-sm " ng-click="updateServo(servoPosition)">Cập nhật góc Servo</a>
+            </div>
+        </div>
+
+        <hr class="style-four">
+        <footer class="footer">    
+              <p class="text-muted pull-left">ESP8266 Monitoring System 2019</p>
+              <p class="text-muted pull-right">Designed by <a href="https://www.facebook.com/minhtin.thai">Tin Thai</a></p>
+        </footer>
+    </div>
+</div>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: visible !important;">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <title>ESP8266 Monitoring</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="base/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="base/css/custom.css" rel="stylesheet">
+        <link href="base/css/guages.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css" rel="stylesheet">
+        <!-- Slider -->
+        <link href="base/css/slider/freshslider.min.css" rel="stylesheet">
+        <!-- Only required for desktop -->
+        <link rel="stylesheet" href="/dist/css/mobile-angular-ui-hover.min.css" />
+        <!-- Always required -->
+        <link rel="stylesheet" href="/dist/css/mobile-angular-ui-base.min.css" />
+        <!-- Only required for desktop -->
+        <link rel="stylesheet" href="/dist/css/mobile-angular-ui-desktop.min.css" />
+        <script src="/angular.min.js"></script>
+        <script src="/angular-route.min.js"></script>
+        <script src="/dist/js/mobile-angular-ui.min.js"></script>
+        <script src="/dist/socket.io.min.js"></script>
+        <script src="/socket.min.js"></script>
+        <script src="/webapp.js"></script>
+        <script src="https://rawgit.com/ashish-chopra/angular-gauge/master/src/angularjs-gauge.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-bootstrap-toggle@0.4.0/dist/angular-bootstrap-toggle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/angular-bootstrap-toggle@0.4.0/dist/angular-bootstrap-toggle.min.js"></script>
+
+    </head>
+
+    <body ng-app="myApp" style="overflow: visible !important;">
+        <div id="wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand pull-left " href="#" id="menu-toggle"><span class="glyphicon glyphicon-chevron-left soft-white"></span>THU GỌN</a>
+                    </div>
+                </div>
+            </nav>
+        
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <div class="user-panel">
+                <div class="image pull-left">
+                    <a href="index.html"><img src="base/img/rocket.png" class="img-circle" alt="User Image"></a>
+                </div>
+                <div class="slogan pull-right">
+                    <h3 class="pull-left">ESP8266</h3>
+                    <br>
+                    <h5 class="pull-left">Monitoring Systems</h5>
+                </div>
+            </div>
+            
+            <ul class="sidebar-nav">
+                <li>
+                    <h3>TỔNG QUAN</h3>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-blackboard"></span>&nbsp; Trang chủ</a>
+                </li>
+                <li >
+                    <a href="#"><span class="glyphicon glyphicon-scale"></span>&nbsp; Thiết bị điện</a>
+                </li>
+                <li >
+                    <a href="#"><span class="glyphicon glyphicon-scale"></span>&nbsp; Cảm biến</a>
+                </li>
+                <li>
+                    <h3>CẤU HÌNH</h3>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-cd"></span>&nbsp; CSDL</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-list"></span>&nbsp; Bảng</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-dashboard"></span>&nbsp; Cảm biến</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp; Người dùng</a>
+                </li>
+                <li>
+                    <h3>TÀI LIỆU</h3>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/minhtin.thai"><span class="glyphicon glyphicon-book"></span>&nbsp; Thông tin</a>
+                </li>
+                <li>
+                    <a href="https://blooming-caverns-57560.herokuapp.com/#!/"><span class="glyphicon glyphicon-book"></span>&nbsp; Phiên bản trước (v1.0)</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <ng-view></ng-view>
+        <!-- /#page-content-->
+
+        
+        <!-- jQuery -->
+        <script src="base/js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="base/js/bootstrap.min.js"></script>
+
+        <!-- GUAGE SECTION -->
+        <script src="base/js/guage/raphael-2.1.4.min.js"></script>
+        <script src="base/js/guage/justgage-1.1.0.min.js"></script>
+
+        <!-- Menu Toggle Script -->
+        <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+        
+        <script>
+            $("#menu-toggle").click(function(e) 
+            {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+    </body>
+</html>

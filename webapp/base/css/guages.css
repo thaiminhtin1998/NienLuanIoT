@@ -1,0 +1,17 @@
+.container {
+        width: 250px;
+    }
+
+.gauge {
+    width: 250px;
+    height: 250px;
+    margin-top: -40px;
+}
+
+a:link.button,
+a:active.button,
+a:visited.button,
+a:hover.button {
+    margin: 30px 5px 0 2px;
+    padding: 7px 13px;
+}
